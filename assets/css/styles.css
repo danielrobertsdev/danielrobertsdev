@@ -35,7 +35,7 @@ ol[role='list'] {
 
 /* Set core body defaults */
 body {
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-family: "DM Sans", sans-serif;
 	line-height: 1.5;
 	/* min-height: 100vh; */
 	-webkit-font-smoothing: antialiased;
@@ -90,4 +90,44 @@ textarea:not([rows]) {
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
 	scroll-margin-block: 5ex;
+}
+
+/* Typography */
+.lead-title {
+	background-image: linear-gradient(45deg, #39FF14 , #2BFD6A , #1DFBA1 , #0FE9D8 , #00D7FF ); 
+	background-clip: text; 
+	color: #39FF14; 
+	-webkit-background-clip: text; 
+	-webkit-text-fill-color: transparent; 
+	font-size: 11vw;
+	font-weight: 900;
+	margin-top: 0;
+}
+
+/* clip image */
+.img-to-be-clipped {
+	flex-shrink: 0;
+	margin: 0;
+	position: relative;
+	height: 160px;
+	clip-path: url(#imgClipPath);
+    width: 160px;
+	
+	img {
+		object-fit: contain;
+    	position: absolute;
+	}
+}
+
+/* layout */
+.row {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+@media (min-width: 575px) {
+	.row {
+		flex-direction: row-reverse;
+		gap: 40px;
+	}
 }
